@@ -1,0 +1,29 @@
+.player-wrapper {
+    width: 60%;
+    margin: 20px auto;
+    position: relative;
+}
+
+.player-wrapper video {
+    width: 100%;
+    display: block;
+}
+
+.player-controls .progress {
+    padding: 8px 0;
+    background: rgb(45, 41, 41);
+    overflow: hidden;
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.player-controls .progress .progress_filled {
+    padding: 8px 0;
+    background: rgb(255, 235, 0);
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
