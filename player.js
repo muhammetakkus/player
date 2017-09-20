@@ -8,8 +8,6 @@ let progressBar = progress.querySelector('.progress_filled');
 let ranges = playerControls.querySelectorAll('.player-slider');
 let skipButtons = playerControls.querySelectorAll('[data-skip]');
 
-//first
-
 
 /*  */
 function togglePlay(){
@@ -29,7 +27,6 @@ function handleRangeUpdate(){
     //player["volume"] - player["playbackRate"] - video özelliklerine bak
     player[this.name] = this.value;
 }
-
 
 /* Event Listeners */
 
@@ -75,14 +72,17 @@ player.addEventListener('loadedmetadata', () => {
     }
 });
 
+//Player Finished
+player.addEventListener('ended', () => {
+    player.currentTime = 0;
+    togglePlayButton.textContent = "⚫";
+});
 
-//video bitince start/stop düğmesi güncellenecek - video başa sarabilir
 //speed kısmı ayarlanacak - range olmasın seçenekli olsun - 0.5x - 1x - 1.5x - 2x - 3x
 //diğer javascript video özellikleri incelenecek
 //github js vplayer kodlarına bakılacak 
 //diğer playerlar incelenecek jwplayer - udemy player - youtube
-
-
+//sağ-sol tuşları ile ileri geri
 
 //bir nesne için offsetX - offsetY -> o nesnenin sol üst köşesinden uzaklık değerleri [mouseeventlerinde çalışıyor]
 //bir nesne için pageX - pageY     -> o nesnenin sayfanın 0,0 noktasından uzaklık değerleri [mouseeventlerinde çalışıyor]

@@ -1,3 +1,12 @@
+body {
+    background: rgba(228, 222, 222, .3);
+    user-select: none;
+}
+
+:root {
+    --black-bg: rgb(58, 36, 36);
+}
+
 .player-wrapper {
     width: 60%;
     margin: 20px auto;
@@ -5,25 +14,84 @@
 }
 
 .player-wrapper video {
+    box-shadow: 3px 4px 46px -20px rgba(71,71,71,0.66);
     width: 100%;
-    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .player-controls .progress {
-    padding: 8px 0;
-    background: rgb(45, 41, 41);
+    padding: 2px 0;
+    background: var(--black-bg);
     overflow: hidden;
     position: absolute;
     bottom: 25px;
-    width: 100%;
+    width: 99.9%;
     box-sizing: border-box;
+    transition: all .2s;
 }
 .player-controls .progress .progress_filled {
-    padding: 8px 0;
-    background: rgb(255, 235, 0);
+    padding: 2px 0;
+    background: rgba(255, 68, 0, 0.61);
     overflow: hidden;
     position: absolute;
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
+    
+}
+
+.player-controls .progress:hover {
+    padding: 6px 0;
+}
+
+video:hover ~ .player-controls .progress, .player-controls .progress .progress_filled {
+    padding: 6px 0;
+}
+
+/* Player Button */
+.player-controls .player-button {
+    background: var(--black-bg);
+    border: none;
+    color: #FFFFFF;
+    outline: none;
+    font-size: 18px;
+    padding: 1px 8px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* Next && Back */
+.next-button, .back-button {
+    background: var(--black-bg);
+    border: none;
+    padding: 3px 5px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+    float: right;
+    margin: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Range */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: var(--black-bg);
+    cursor: pointer;
+    margin-top: 5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  }
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: var(--black-bg);
+    border-radius: 1.3px;
+    border: none;
 }

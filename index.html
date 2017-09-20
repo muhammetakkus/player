@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="player-wrapper">
-        <video src="vid.mp4" class="player" curre></video>
-
+        <video src="video.mp4" class="player"></video>
+        
         <div class="player-controls">
             <!-- Progress -->
             <div class="progress">
@@ -28,11 +28,12 @@
             <input type="range" class="player-slider" name="playbackRate"
             min="0.5" max="2" step="0.1" value="1">
 
-            <!-- Next -->
-            <button class="player-button" data-skip="-10"><< 10s</button>
+            
             
             <!-- Back -->
-            <button class="player-button" data-skip="25">25s >></button>
+            <button class="back-button" data-skip="25">25s >></button>
+            <!-- Next -->
+            <button class="next-button" data-skip="-10"><< 10s</button>
         </div>
     </div>
 
